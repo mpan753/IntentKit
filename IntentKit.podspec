@@ -62,4 +62,11 @@ Pod::Spec.new do |s|
     ss.resource_bundles = { 'IntentKit-WGWeiboHandler' => "IntentKit/Apps/Weibo/*.{plist,png}" }
     ss.requires_arc = true
   end
+
+  s.subspec 'Wechat' do |ss|
+    ss.dependency 'IntentKit/Core'
+    ss.source_files = 'IntentKit/Handlers/WGWechatHandler.{h,m}'
+    ss.resource_bundles = { 'IntentKit-WGWechatHandler' => "IntentKit/Apps/Wechat/*.{plist,png}" }
+    ss.requires_arc = true
+  end
 end
