@@ -5,9 +5,9 @@ Pod::Spec.new do |s|
   s.summary   = "An easier way to handle third-party URL schemes in iOS apps."
   s.homepage  = 'https://github.com/intentkit/IntentKit'
   s.authors   = { 'Mike Walker' => 'michael@lazerwalker.com' }
-  s.source    = { :git => 'https://github.com/intentkit/IntentKit.git', :tag => "0.7.5" }
+  s.source    = { :git => 'https://github.com/mpan753/IntentKit.git', :tag => "0.7.5" }
   s.requires_arc = true
-  s.platform  = :ios, '7.0'
+  s.platform  = :ios, '8.0'
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'IntentKit', 'IntentKit/Core/**/*.{h,m}', "IntentKit/Handlers/INKBrowserHandler.{h,m}", 'IntentKit/Apps/INKWebView/*.{h,m}'
@@ -53,6 +53,13 @@ Pod::Spec.new do |s|
     ss.dependency 'IntentKit/Core'
     ss.source_files = 'IntentKit/Handlers/INKGPlusHandler.{h,m}'
     ss.resource_bundles = { 'IntentKit-INKGPlusHandler' => "IntentKit/Apps/Google+/*.{plist,png}" }
+    ss.requires_arc = true
+  end
+  
+  s.subspec 'Weibo' do |ss|
+    ss.dependency 'IntentKit/Core'
+    ss.source_files = 'IntentKit/Handlers/WGWeiboHandler.{h,m}'
+    ss.resource_bundles = { 'IntentKit-WGWeiboHandler' => "IntentKit/Apps/Weibo/*.{plist,png}" }
     ss.requires_arc = true
   end
 end
